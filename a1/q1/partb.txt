@@ -1,0 +1,43 @@
+Script started on Sat 22 Sep 2012 01:30:48 PM EDT
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000
+0.320u 0.000s 0:00.32 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 -1
+0.320u 0.000s 0:00.33 96.9%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 0
+0.420u 0.000s 0:00.42 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 1
+0.510u 0.000s 0:00.51 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 2
+0.620u 0.000s 0:00.62 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 3
+0.690u 0.000s 0:00.69 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 4
+0.790u 0.000s 0:00.79 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 6
+0.990u 0.000s 0:00.99 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 8
+1.160u 0.000s 0:01.16 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 16
+1.820u 0.000s 0:01.82 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 32
+
+3.400u 0.000s 0:03.40 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> 
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 50
+5.020u 0.000s 0:05.02 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 64
+6.290u 0.000s 0:06.29 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 100
+9.190u 0.000s 0:09.19 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 128
+12.230u 0.000s 0:12.23 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 256
+22.900u 0.020s 0:22.92 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 512
+46.160u 0.000s 0:46.16 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt.out 100000 1024
+90.080u 0.000s 1:30.08 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> exit
+exit
+
+Script done on Sat 22 Sep 2012 01:38:10 PM EDT

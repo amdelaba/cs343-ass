@@ -1,0 +1,43 @@
+Script started on Sat 22 Sep 2012 01:30:48 PM EDT
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> exittime ./q1except-opt.out 60000000[K[K[K[K[K[K[K[K 100000
+0.320u 0.000s 0:00.32 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 -1
+0.320u 0.000s 0:00.33 96.9%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 -1[K[K0
+0.420u 0.000s 0:00.42 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 0[K1
+0.510u 0.000s 0:00.51 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 1[K2
+0.620u 0.000s 0:00.62 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 2[K3
+0.690u 0.000s 0:00.69 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 3[K4
+0.790u 0.000s 0:00.79 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 4[K6
+0.990u 0.000s 0:00.99 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 6[K8
+1.160u 0.000s 0:01.16 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 8[K16
+1.820u 0.000s 0:01.82 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 16[K[K32
+
+3.400u 0.000s 0:03.40 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> 
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 32[K[K50
+5.020u 0.000s 0:05.02 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 5064[K[K[K[K64
+6.290u 0.000s 0:06.29 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 64[K[K100
+9.190u 0.000s 0:09.19 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 100[K[K28
+12.230u 0.000s 0:12.23 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 128256[K[K[K[K[K[K256
+22.900u 0.020s 0:22.92 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 256[K[K[K512
+46.160u 0.000s 0:46.16 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> time ./q1except-opt.out 100000 512[K[K[K1028[K4
+90.080u 0.000s 1:30.08 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:[1m~/cs343/cs343-ass/a1/q1[0m> exit
+exit
+
+Script done on Sat 22 Sep 2012 01:38:10 PM EDT

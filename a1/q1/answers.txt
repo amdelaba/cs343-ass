@@ -1,0 +1,128 @@
+q1perf.txt
+Q1 Answers
+
+(A) Compare the two versions of the program with respect to performanceCompare the two versions of the program with respect to performance
+
+• Include 4 timing results to validate the experiments.
+
+Script started on Sat 22 Sep 2012 12:32:05 PM EDT
+
+>> Without preprocessor variable EXCEPT. Optimization off.
+% time ./q1.out 60000000
+0.600u 0.000s 0:00.60 100.0%	
+
+>> Without preprocessor variable EXCEPT. Optimizarion on.
+% time ./q1-opt.out 60000000
+0.110u 0.000s 0:00.11 100.0%	
+
+>> With preprocessor variable EXCEPT. Optimizarion off.
+% time ./q1except.out 60000000 
+172.520u 0.000s 2:52.52 100.0%	
+
+>> Without preprocessor variable EXCEPT. Optimizarion on.
+% time ./q1except-opt.out 60000000
+186.770u 0.070s 3:06.84 100.0%	
+
+% exit
+Script done on Sat 22 Sep 2012 12:43:04 PM EDT
+
+
+• Explain the relative differences in the timing results with respect to static versus dynamic multi-level
+exit within a routine.
+- The difference between running the program with static versus dynamic multi-level exit is significant.
+As shown above, the execution is much faster with static multi-level exit. This is due to the fact that 
+the handler/exit is statically known at compile time.
+
+//**
+Static multi-level exit exits multiple control structures where exit points are known at compile
+time.The advantage of the sequel is the handler is statically known (like static multi-level exit),
+and can be as efficient as a direct transfer.
+
+Dynamic propagation is also called dynamic multi-level exit. The advantage is that dynamic propagation works for separately-compiled programs.
+The disadvantage (advantage) of dynamic propagation is the handler is not statically known. 
+Without dynamic handler selection, the same action and context for that action is executed
+for every exceptional change in control flow.
+**//
+
+
+
+
+• State the performance difference when compiler optimization is used?
+- With static multi-level exit the difference between running the program using optimization is noticeable and significant. 
+The optimization cuts the execution time by half. This is due to the fact that the exits points are known at compile time and the compiled code can be indeed optimized. 
+
+With dynamic multi-level exit, the execution is not only not optimized but it is slowed down, although the difference is so
+miniscule is almost irrelevant. Exit points are known at run time therefore compiler optimization can't make this code run any faster.
+
+
+
+
+• BONUS: If there is a difference in performance using -O2, explain what compiler optimization is
+being performed to achieve the performance gain.
+-
+
+
+
+
+
+(B) Determine the cost of propagation and stack unwinding.
+                                                                                                    
+• Compile with EXCEPT defined and the compiler optimization turned on, and then run the program
+varying the number of recursive calls to rtn to increase the stack depth before the exception is raised.
+
+Script started on Sat 22 Sep 2012 01:30:48 PM EDT
+
+% time ./q1except-opt.out 100000 -1
+0.320u 0.000s 0:00.33 96.9%	 
+
+% time ./q1except-opt.out 100000 0
+0.420u 0.000s 0:00.42 100.0%	 
+
+% time ./q1except-opt.out 100000 1
+0.510u 0.000s 0:00.51 100.0%	 
+
+% time ./q1except-opt.out 100000 2
+0.620u 0.000s 0:00.62 100.0%	 
+
+% time ./q1except-opt.out 100000 4
+0.790u 0.000s 0:00.79 100.0%	 
+
+% time ./q1except-opt.out 100000 8
+1.160u 0.000s 0:01.16 100.0%	 
+
+% time ./q1except-opt.out 100000 16
+1.820u 0.000s 0:01.82 100.0%	 
+
+% time ./q1except-opt.out 100000 32
+3.400u 0.000s 0:03.40 100.0%	 
+ 
+% time ./q1except-opt.out 100000 64
+6.290u 0.000s 0:06.29 100.0%	 
+
+% time ./q1except-opt.out 100000 128
+12.230u 0.000s 0:12.23 100.0%	 
+
+% time ./q1except-opt.out 100000 256
+22.900u 0.020s 0:22.92 100.0%	 
+
+% time ./q1except-opt.out 100000 512
+46.160u 0.000s 0:46.16 100.0%	 
+
+% time ./q1except-opt.out 100000 1024
+90.080u 0.000s 1:30.08 100.0%	 
+
+% exit
+Script done on Sat 22 Sep 2012 01:38:10 PM EDT
+
+
+
+• Explain the relative differences in the timing results with respect to propagation among routines.
+Include a number of timing results to validate your explanation.
+- The execution time is directly proportional to the number of times the routine rtn is recursively 
+called. This is due to the fact that the stack is unwound frame by frame at a constant time rate.
+
+
+
+
+
+(C) Explain when dynamic multi-level exit is necessary and unnecessary.

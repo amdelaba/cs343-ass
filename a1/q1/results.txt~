@@ -1,0 +1,15 @@
+Script started on Sat 22 Sep 2012 12:32:05 PM EDT
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1.out 60000000
+0.600u 0.000s 0:00.60 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1-opt
+0.110u 0.000s 0:00.11 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except.
+q1except.cc~  q1except.cc   q1except.out* 
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except. 60000000out 
+172.520u 0.000s 2:52.52 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> time ./q1except-opt
+^[OH186.770u 0.070s 3:06.84 100.0%	0+0k 0+0io 0pf+0w
+1%>linux024:~/cs343/cs343-ass/a1/q1> exit
+exit
+
+Script done on Sat 22 Sep 2012 12:43:04 PM EDT

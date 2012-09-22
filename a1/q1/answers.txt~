@@ -1,0 +1,65 @@
+Script started on Sat 22 Sep 2012 12:32:05 PM EDT
+
+>> Without preprocessor variable EXCEPT. Optimization off.
+% time ./q1.out 60000000
+0.600u 0.000s 0:00.60 100.0%	
+
+>> Without preprocessor variable EXCEPT. Optimizarion on.
+% time ./q1-opt.out 60000000
+0.110u 0.000s 0:00.11 100.0%	
+
+>> With preprocessor variable EXCEPT. Optimizarion off.
+% time ./q1except.out 60000000 
+172.520u 0.000s 2:52.52 100.0%	
+
+>> Without preprocessor variable EXCEPT. Optimizarion on.
+% time ./q1except-opt.out 60000000
+186.770u 0.070s 3:06.84 100.0%	
+
+% exit
+Script done on Sat 22 Sep 2012 12:43:04 PM EDT
+
+
+
+a)
+
+• Explain the relative differences in the timing results with respect to static versus dynamic multi-level
+exit within a routine.
+- The difference between running the program with static versus dynamic multi-level exit is significant.
+As shown above, the execution is much faster with static multi-level exit. This is due to the fact that 
+the handler/exit is statically known at compile time.
+
+//**
+Static multi-level exit exits multiple control structures where exit points are known at compile
+time.The advantage of the sequel is the handler is statically known (like static multi-level exit),
+and can be as efficient as a direct transfer.
+
+Dynamic propagation is also called dynamic multi-level exit. The advantage is that dynamic propagation works for separately-compiled programs.
+The disadvantage (advantage) of dynamic propagation is the handler is not statically known. 
+Without dynamic handler selection, the same action and context for that action is executed
+for every exceptional change in control flow.
+**//
+
+
+
+
+• State the performance difference when compiler optimization is used?
+- With static multi-level exit the difference between running the program using optimization is noticeable and significant. 
+The optimization cuts the execution time by half. This is due to the fact that the exits points are known at compile time
+and the compiled code can be indeed optimized. 
+
+With dynamic multi-level exit, the execution is not only not optimized but it is slowed down, although the difference is so
+miniscule is almost irrelevant. Exit points are known at run time therefore compiler optimization can't make this code run any faster.
+
+
+
+
+• BONUS: If there is a difference in performance using -O2, explain what compiler optimization is
+being performed to achieve the performance gain.
+-
+
+
+
+
+
+b)
