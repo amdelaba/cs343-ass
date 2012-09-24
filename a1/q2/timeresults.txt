@@ -1,0 +1,42 @@
+Script started on Mon 24 Sep 2012 06:13:34 PM EDT
+1%>linux032:~/cs343/cs343-ass/a1/q2> 
+1%>linux032:~/cs343/cs343-ass/a1/q2> time ./longjmp 11111 11111 11111
+0.340u 0.010s 0:00.35 100.0%	0+0k 0+0io 0pf+0w
+1%>linux032:~/cs343/cs343-ass/a1/q2> time ./longjmpt
+throwcatch* typescript  
+1%>linux032:~/cs343/cs343-ass/a1/q2> time ./t 11111 11111 11111hrowcatch 
+81.560u 0.030s 1:21.59 100.0%	0+0k 0+0io 0pf+0w
+1%>linux032:~/cs343/cs343-ass/a1/q2> make clean
+rm -f *.d *.o throwcatch							 longjmp								 grammar														
+1%>linux032:~/cs343/cs343-ass/a1/q2> ls
+Makefile  q2.cc  q2longjmp.cc  q2throwcatch.cc	typescript
+1%>linux032:~/cs343/cs343-ass/a1/q2> g++ -g -Wall -Wno-unused-label -MMD -c q2longjmp.cc -o q2longjmp.o
+1%>linux032:~/cs343/cs343-ass/a1/q2> ls
+Makefile  q2.cc  q2longjmp.cc  q2longjmp.d  q2longjmp.o  q2throwcatch.cc  typescript
+1%>linux032:~/cs343/cs343-ass/a1/q2> make clean
+rm -f *.d *.o throwcatch							 longjmp								 grammar														
+1%>linux032:~/cs343/cs343-ass/a1/q2> make cleang++ -g -Wall -Wno-unused-label -MMD -c q2longjmp.cc -ls
+Makefile  q2.cc  q2longjmp.cc  q2throwcatch.cc	typescript
+1%>linux032:~/cs343/cs343-ass/a1/q2> make cleang++ -O2
+1%>linux032:~/cs343/cs343-ass/a1/q2> ls
+Makefile  q2.cc  q2longjmp.cc  q2longjmp.d  q2longjmp.o  q2throwcatch.cc  typescript
+1%>linux032:~/cs343/cs343-ass/a1/q2> g++ -O2
+1%>linux032:~/cs343/cs343-ass/a1/q2> ls
+longjmp  Makefile  q2.cc  q2longjmp.cc	q2longjmp.d  q2longjmp.o  q2throwcatch.cc  typescript
+1%>linux032:~/cs343/cs343-ass/a1/q2> g++ -O2 q2longjmp.o -o longjmpg++ -O2 -g -Wall -Wno-unused-label -MMD -c q2longjmp.cc -o q2longjmp.omake cleang++ -g -Wall -Wno-unused-label -MMD -c q2longjmp.cc -o q2longjmp.omake cleantime ./throwcatch 11111 11111 11111longjmp./longjmp 1 1 1./longjmp 1 1 1./longjmp 1 1 1time ./longjmp 11111 11111 11111throwcatchmake cleang++ -g -Wall -Wno-unused-label -MMD -c q2longjmp.cc -o q2longjmp.omake cleang++ -O2 -g -Wall -Wno-unused-label -MMD -c q2longjmp.cc -o q2longjmp.og++ -O2 q2longjmp.o -o longjmp./longjmp 11111 11111 11111
+1%>linux032:~/cs343/cs343-ass/a1/q2> time 
+0.300u 0.000s 0:00.30 100.0%	0+0k 0+0io 0pf+0w
+1%>linux032:~/cs343/cs343-ass/a1/q2> g++ -O2
+1%>linux032:~/cs343/cs343-ass/a1/q2> l
+l: Command not found.
+1%>linux032:~/cs343/cs343-ass/a1/q2> ls
+longjmp  Makefile  q2.cc  q2longjmp.cc	q2longjmp.d  q2longjmp.o  q2throwcatch.cc  q2throwcatch.d  q2throwcatch.o  typescript
+1%>linux032:~/cs343/cs343-ass/a1/q2> g++ -O2
+1%>linux032:~/cs343/cs343-ass/a1/q2> time ./t
+throwcatch* typescript  
+1%>linux032:~/cs343/cs343-ass/a1/q2> time ./throwcatch 11111 11111 11111
+69.660u 0.010s 1:09.67 100.0%	0+0k 0+0io 0pf+0w
+1%>linux032:~/cs343/cs343-ass/a1/q2> time ./throwcatch 11111 11111 11111exit
+exit
+
+Script done on Mon 24 Sep 2012 06:26:12 PM EDT
