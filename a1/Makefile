@@ -2,10 +2,10 @@ CXX = u++								# compiler
 CXXFLAGS = -g -Wall -Wno-unused-label -MMD				# compiler flags
 MAKEFILE_NAME = ${firstword ${MAKEFILE_LIST}}	# makefile name
 
-OBJECTS0 = q2throwcatch.o								# optional build of given throwcatch program
+OBJECTS0 = q2.o								# optional build of given throwcatch program
 EXEC0 = throwcatch							# 0th executable name
 
-OBJECTS1 = q2longjmp.o 							# object files forming 1st executable with prefix "q2"
+OBJECTS1 = # object files forming 1st executable with prefix "q2"
 EXEC1 = longjmp								# 1st executable name
 
 OBJECTS2 = # object files forming 2nd executable with prefix "q3"
