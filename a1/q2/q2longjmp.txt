@@ -1,14 +1,16 @@
+## Results without compiler optimization
 
 % time ./longjmp 11111 11111 11111
 0.340u 0.010s 0:00.35 100.0%	
 
 
-% time ./t 11111 11111 11111hrowcatch 
+% time ./throwcatch 11111 11111 11111 
 81.560u 0.030s 1:21.59 100.0%	
 
 
+## Result with compiler optimization
 
-% time 
+% time ./longjmp 11111 11111 11111
 0.300u 0.000s 0:00.30 100.0%	
 
 
@@ -16,3 +18,15 @@
 69.660u 0.010s 1:09.67 100.0%	
 
 
+
+## OBSERVATIONS 
+
+The transformed program longjmp that has longjmp and setjmp as means of chaging control flow run much quicker than
+the unmodified program with the try-throw-catch statements.  Compiler optimization virtually does not improve the time 
+for the throwcatch program and it improves the time for longjmp by very little. The little improvement might bepartly 
+because of the anti-optmization measures in both programs.
+
+The major differnce of performance between  is due to the fact that when we use the try-catch statements to handle excepions, as the stack unwinds to
+find the catch statement "willing" to handle the exception, the objects in the unwoudn stack frames are destroyed. The throwcatch program exectutes the destructors as seen in 
+the output (the only difference in output between the two programs). On the other hand, the longjmp program does not invoke the destructor of the 
+T struct ( ~T() ). 
