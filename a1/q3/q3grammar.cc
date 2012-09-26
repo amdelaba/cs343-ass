@@ -59,7 +59,7 @@ void uMain::main() {
     string line;
     for (;;){ 
       Grammar grammar;
-      getline(*infile, line);
+      getline(*infile, line); // read line into string line
       if ( infile->fail() ) break;
       *outfile << "\"" << line <<  "\" : ";
       
@@ -69,16 +69,16 @@ void uMain::main() {
       
       else {
 	
-	*outfile << "\"";
+	*outfile << "\""; // open quote
       
 	for (unsigned int i = 0; i < line.length(); i+=1){
 	  
 	  *outfile << line[i];
 	  
-	  Grammar::Status status = grammar.next( line[i] );
+	  Grammar::Status status = grammar.next( line[i] ); //call to coroutine
 
 	  if ( status  == Grammar::CONT ){
-	    if (i == line.length()-1){ //last character
+	    if (i == line.length()-1){  // last character, match is incomplete
 	      *outfile << "\"";
 	      *outfile << " no";
 	    }

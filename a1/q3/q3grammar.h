@@ -9,7 +9,7 @@ _Coroutine Grammar {
  private:
   Status status;					// current status of match
   char ch;						// character passed by cocaller
-  int bs;
+  int bs;                                               // stack-like variable to make sure #bs == #cs+1
   
   void main(){
     bs = 0;
@@ -46,7 +46,7 @@ _Coroutine Grammar {
     // 0 or more c's
     while ( ch == 'c'){
       bs--;
-      if (bs == 0){
+      if (bs == 0){ // number of cs equal or greater than number of bs
 	status = ERROR;
 	suspend();
 	break;
@@ -55,7 +55,8 @@ _Coroutine Grammar {
       suspend();
     }
 
-    if (bs != 1){
+    
+    if (bs != 1){ // There are 2 or more bs than cs
       status = ERROR;
       suspend();
     }

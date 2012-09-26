@@ -1,8 +1,21 @@
-Script started on Wed 26 Sep 2012 06:48:04 PM EDT
-1%>linux032:~/cs343/cs343-ass/a1/q3> ./sample-grammar test.in >
-1%>linux032:~/cs343/cs343-ass/a1/q3> ./grammar test.in > test.out
-1%>linux032:~/cs343/cs343-ass/a1/q3> diff sample.out test.out
-1%>linux032:~/cs343/cs343-ass/a1/q3> cat -n test.in
+ASS1-Q3 TEST DOCUMENTATION
+=========================
+The program verifies whether a line of characters matches the 
+language ab+c*d, in addition, the number of bs must 
+be exactly one greater than the number of cs. 
+
+USER INTERFACE TESTING
+    There is no user interface to be tested, so the testing focuses
+    solely on the algorithm used for the verification.
+
+ALGORITHM TESTING
+
+  TEST 1:
+  -------
+    DATA DESCRIPTION
+    The first input file used is "data1.in".  
+    The contents of the file, with each line numbered, are:
+
      1	a
      2	b
      3	c
@@ -22,41 +35,96 @@ Script started on Wed 26 Sep 2012 06:48:04 PM EDT
     17	abbccd
     18	 abbcd
     19	 
-    20	
-    21	abd
-    22	abbcd
-    23	abbbccd
-    24	abbbccd
-    25	abbbccdab
-    26	
-1%>linux032:~/cs343/cs343-ass/a1/q3> cat -n test.out
-     1	"a" : "a" no
-     2	"b" : "b" no
-     3	"c" : "c" no
-     4	"d" : "d" no
-     5	"ab" : "ab" no
-     6	"ac" : "ac" no
-     7	"ad" : "ad" no
-     8	"abc" : "abc" no
-     9	"abb" : "abb" no
-    10	"abbc" : "abbc" no
-    11	"abbd" : "abbd" no
-    12	"abbcc" : "abbcc" no
-    13	"" : Warning! Blank line.
-    14	"acd" : "ac" no -- extraneous characters "d"
-    15	"abcc" : "abc" no -- extraneous characters "c"
-    16	"abcd" : "abc" no -- extraneous characters "d"
-    17	"abbccd" : "abbcc" no -- extraneous characters "d"
-    18	" abbcd" : " " no -- extraneous characters "abbcd"
-    19	" " : " " no
-    20	"" : Warning! Blank line.
-    21	"abd" : "abd" yes
-    22	"abbcd" : "abbcd" yes
-    23	"abbbccd" : "abbbccd" yes
-    24	"abbbccd" : "abbbccd" yes
-    25	"abbbccdab" : "abbbccd" yes -- extraneous characters "ab"
-    26	"" : Warning! Blank line.
-1%>linux032:~/cs343/cs343-ass/a1/q3> exit
-exit
 
-Script done on Wed 26 Sep 2012 06:49:39 PM EDT
+    The lines contained in this file are meant to test for incorrect input
+    and white space. Lines 1-4 are used to test correctness for 1 character 
+    inputs. Lines 5-7 are used to test for correctness of first character after a 
+    correct one. Lines 8-10 are used to test for partially correct input.
+    Lines 11,12 and 14-17 are used to test for incorrect number of bs and cs.
+    Lines 13,18 and 19 are used to test for white space in a line and blank 
+    lines (line 13 is empty and line and line 19 is just a space character). 
+
+    TESTING
+    Here is the script-fixed log of the testing performed with line numbers
+    attached.
+
+      % ./grammar data1.in > data1.out
+      % cat -n data1.out
+ 	 1	"a" : "a" no
+     	 2	"b" : "b" no
+    	 3	"c" : "c" no
+     	 4	"d" : "d" no
+     	 5	"ab" : "ab" no
+     	 6	"ac" : "ac" no
+     	 7	"ad" : "ad" no
+     	 8	"abc" : "abc" no
+     	 9	"abb" : "abb" no
+    	 10	"abbc" : "abbc" no
+    	 11	"abbd" : "abbd" no
+    	 12	"abbcc" : "abbcc" no
+    	 13	"" : Warning! Blank line.
+    	 14	"acd" : "ac" no -- extraneous characters "d"
+    	 15	"abcc" : "abc" no -- extraneous characters "c"
+    	 16	"abcd" : "abc" no -- extraneous characters "d"
+    	 17	"abbccd" : "abbcc" no -- extraneous characters "d"
+    	 18	" abbcd" : " " no -- extraneous characters "abbcd"
+    	 19	" " : " " no
+    
+       
+    ANALYSIS
+    The results from running the program on "data1.in" show that:
+
+    1) Blank lines are noted as such. Shown in line 13.
+    2) Lines that do not start with an 'a' are marked as 
+       incorrect ("no") as shown in lines 2-4 and 18.
+    3) Lines that do not end with a 'd' are marked as 
+       incorrect ("no") as shown in lines 9 and 10 where
+       the input is partially correct.
+    4) Lines that do not have exactly one more b than the
+       number of cs are shown as incorrect, as demonstrated
+       in lines 11, 16 and 17.
+    5) The extraneous characters are shown as soon as the 
+       string is found not to match the grammar.
+
+    From this we can say that each of these lines was shown not
+    to follow the grammar and theredore the program works correctly
+    for incorrect inputs.
+
+
+
+  TEST 2:
+  -------
+    DATA DESCRIPTION
+    The second input file used is "data2.in".  
+    The contents of the file, with each line numbered, are:
+
+    1	abd
+    2	abbcd
+    3	abbbccdab
+
+    The lines contained in this file are meant to test for correct input that
+    matches the grammar.
+    Line 1 tests for input with no cs. Line 2 tests for input with 2bs and 1c.
+    Line 3 tests for correct input but additional characters at the end.
+
+    TESTING
+    Here is the script-fixed log of the testing performed with line numbers
+    attached.
+
+      % ./grammar data2.in > data2.out
+      % cat -n data2.out
+      	    1	"abd" : "abd" yes
+	    2	"abbcd" : "abbcd" yes
+	    3	"abbbccdab" : "abbbccd" yes -- extraneous characters "ab"
+       
+    ANALYSIS
+    The results from running the program on "data2.in" show that:
+    
+    1) A "yes" is diplayed for all inputs that match the language
+    2) The additional charcters are displayed when the 
+    match is correct (if any).
+
+    From this we can say that the program correctly identifies strings
+    that match the language therefore the program works correctly
+    for correct inputs.
+
