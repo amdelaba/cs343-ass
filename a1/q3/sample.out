@@ -1,0 +1,26 @@
+"a" : "a" no
+"b" : "b" no
+"c" : "c" no
+"d" : "d" no
+"ab" : "ab" no
+"ac" : "ac" no
+"ad" : "ad" no
+"abc" : "abc" no
+"abb" : "abb" no
+"abbc" : "abbc" no
+"abbd" : "abbd" no
+"abbcc" : "abbcc" no
+"" : Warning! Blank line.
+"acd" : "ac" no -- extraneous characters "d"
+"abcc" : "abc" no -- extraneous characters "c"
+"abcd" : "abc" no -- extraneous characters "d"
+"abbccd" : "abbcc" no -- extraneous characters "d"
+" abbcd" : " " no -- extraneous characters "abbcd"
+" " : " " no
+"" : Warning! Blank line.
+"abd" : "abd" yes
+"abbcd" : "abbcd" yes
+"abbbccd" : "abbbccd" yes
+"abbbccd" : "abbbccd" yes
+"abbbccdab" : "abbbccd" yes -- extraneous characters "ab"
+"" : Warning! Blank line.

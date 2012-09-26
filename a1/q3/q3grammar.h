@@ -9,9 +9,11 @@ _Coroutine Grammar {
  private:
   Status status;					// current status of match
   char ch;						// character passed by cocaller
-
+  int bs;
+  
   void main(){
-
+    bs = 0;
+   
     // First a
     if ( ch == 'a'){
       status = CONT;
@@ -24,6 +26,7 @@ _Coroutine Grammar {
 
     // At least 1 b
     if ( ch == 'b'){
+      bs++;
       status = CONT;
     }
     else{
@@ -34,6 +37,7 @@ _Coroutine Grammar {
 
     // 0 or more b's
     while ( ch == 'b'){
+      bs++;
       status = CONT;
       suspend();
     }
@@ -41,10 +45,20 @@ _Coroutine Grammar {
 
     // 0 or more c's
     while ( ch == 'c'){
+      bs--;
+      if (bs == 0){
+	status = ERROR;
+	suspend();
+	break;
+      }
       status = CONT;
       suspend();
     }
 
+    if (bs != 1){
+      status = ERROR;
+      suspend();
+    }
 
     // Last d
     if ( ch == 'd'){

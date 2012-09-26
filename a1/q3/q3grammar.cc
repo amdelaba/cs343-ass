@@ -55,22 +55,6 @@ void uMain::main() {
 
     *infile >> noskipws;				// turn off white space skipping during input
 
-
-    /* char by char
-    char ch;
- A: for ( ;; ) {  // for every line		   
-      Grammar grammar;
-    B: for ( ;; ) {  // for every char in line
-	*infile >> ch;					// read a character
-	if ( infile->fail() ) break A;			// Check fail to exit first loop 
-	*outfile << ch;					// write a character
-	if ( ch == '\n' ) break B;                      // Check for newline char
-      } //for
-    } // for
-    */
-    
-
-
     //* line by line
     string line;
     for (;;){ 
@@ -94,6 +78,10 @@ void uMain::main() {
 	  Grammar::Status status = grammar.next( line[i] );
 
 	  if ( status  == Grammar::CONT ){
+	    if (i == line.length()-1){ //last character
+	      *outfile << "\"";
+	      *outfile << " no";
+	    }
 	  }
 
 	  else {
