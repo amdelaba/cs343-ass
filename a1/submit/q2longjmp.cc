@@ -1,4 +1,4 @@
-#define NOOUTPUT
+//#define NOOUTPUT
 
 #include <iostream>
 using namespace std;
