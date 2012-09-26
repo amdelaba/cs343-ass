@@ -1,0 +1,62 @@
+Script started on Wed 26 Sep 2012 06:48:04 PM EDT
+1%>linux032:[1m~/cs343/cs343-ass/a1/q3[0m> ./sample-grammar test.in sample.out [1@ [1@>
+1%>linux032:[1m~/cs343/cs343-ass/a1/q3[0m> ./grammar test.in > test.out
+1%>linux032:[1m~/cs343/cs343-ass/a1/q3[0m> diff sample.out test.out
+1%>linux032:[1m~/cs343/cs343-ass/a1/q3[0m> cat test[K[K[K[K-n test.in
+     1	a
+     2	b
+     3	c
+     4	d
+     5	ab
+     6	ac
+     7	ad
+     8	abc
+     9	abb
+    10	abbc
+    11	abbd
+    12	abbcc
+    13	
+    14	acd
+    15	abcc
+    16	abcd
+    17	abbccd
+    18	 abbcd
+    19	 
+    20	
+    21	abd
+    22	abbcd
+    23	abbbccd
+    24	abbbccd
+    25	abbbccdab
+    26	
+1%>linux032:[1m~/cs343/cs343-ass/a1/q3[0m> cat - n test.out
+     1	"a" : "a" no
+     2	"b" : "b" no
+     3	"c" : "c" no
+     4	"d" : "d" no
+     5	"ab" : "ab" no
+     6	"ac" : "ac" no
+     7	"ad" : "ad" no
+     8	"abc" : "abc" no
+     9	"abb" : "abb" no
+    10	"abbc" : "abbc" no
+    11	"abbd" : "abbd" no
+    12	"abbcc" : "abbcc" no
+    13	"" : Warning! Blank line.
+    14	"acd" : "ac" no -- extraneous characters "d"
+    15	"abcc" : "abc" no -- extraneous characters "c"
+    16	"abcd" : "abc" no -- extraneous characters "d"
+    17	"abbccd" : "abbcc" no -- extraneous characters "d"
+    18	" abbcd" : " " no -- extraneous characters "abbcd"
+    19	" " : " " no
+    20	"" : Warning! Blank line.
+    21	"abd" : "abd" yes
+    22	"abbcd" : "abbcd" yes
+    23	"abbbccd" : "abbbccd" yes
+    24	"abbbccd" : "abbbccd" yes
+    25	"abbbccdab" : "abbbccd" yes -- extraneous characters "ab"
+    26	"" : Warning! Blank line.
+1%>linux032:[1m~/cs343/cs343-ass/a1/q3[0m> exit
+exit
+
+Script done on Wed 26 Sep 2012 06:49:39 PM EDT
