@@ -1,0 +1,8 @@
+"abd" : "abd" yes
+"abbcd" : "abbcd" yes
+"abbbccd" : "abbbccd" yes
+"abbbccdab" : "abbbccd" yes -- extraneous characters "ab"
+"" : Warning! Blank line.
+"acd" : "ac" no -- extraneous characters "d"
+"abcd" : "abc" no -- extraneous characters "d"
+"ad" : "ad" no
